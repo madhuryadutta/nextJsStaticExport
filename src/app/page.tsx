@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Post } from "@/types/post";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT || "https://1dummyjson.com";
+console.log(apiUrl);
 // ✅ Fetch all posts at build time
 async function getPosts(): Promise<Post[]> {
   const res = await fetch(apiUrl+"/posts");

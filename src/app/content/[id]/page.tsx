@@ -1,7 +1,7 @@
 import { Post } from "@/types";
 import { Metadata } from "next";
-const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
-
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT || "https://1dummyjson.com";
+console.log(apiUrl);
 // ✅ Fetch a single post
 async function getPost(id: string): Promise<Post> {
     const res = await fetch(`${apiUrl}/posts/${id}`);
