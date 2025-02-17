@@ -17,9 +17,76 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
     const post = await getPost(id);
 
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <p>{post.body}</p>
+        <div className="max-w-3xl mx-auto py-10 px-4">
+            {/* ✅ Blog Header */}
+            <BlogHeader title={post.title} />
+
+            {/* ✅ Author & Meta Info */}
+            <AuthorSection author="John Doe" date="Feb 18, 2025" />
+
+            {/* ✅ Blog Content */}
+            <BlogContent body={post.body} />
+
+            {/* ✅ Tags */}
+            <TagList tags={post.tags} />
+
+            {/* ✅ Related Posts Placeholder */}
+            <RelatedPosts />
+        </div>
+    );
+}
+
+
+// Blog Header
+function BlogHeader({ title }: { title: string }) {
+    return <h1 className="text-4xl font-bold text-gray-800 mb-4">{title}</h1>;
+}
+
+// Author Section
+function AuthorSection({ author, date }: { author: string; date: string }) {
+    return (
+        <div className="text-gray-600 text-sm mb-6">
+            <p>
+                By <span className="font-medium text-gray-900">{author}</span> • {date}
+            </p>
+        </div>
+    );
+}
+
+// Blog Content
+function BlogContent({ body }: { body: string }) {
+    return (
+        <div className="text-gray-700 leading-relaxed text-lg bg-white p-6 rounded-xl shadow-md">
+            <p>{body}</p>
+        </div>
+    );
+}
+
+// Tags List
+function TagList({ tags }: { tags: string[] }) {
+    return (
+        <div className="mt-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Tags:</h3>
+            <div className="flex flex-wrap gap-2">
+                {tags.map((tag, index) => (
+                    <span
+                        key={index}
+                        className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"
+                    >
+                        #{tag}
+                    </span>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+// Related Posts Placeholder
+function RelatedPosts() {
+    return (
+        <div className="mt-10">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Related Posts</h3>
+            <p className="text-gray-500">More posts will be displayed here...</p>
         </div>
     );
 }
