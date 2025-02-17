@@ -65,7 +65,7 @@ function Navbar() {
         {/* ✅ Brand */}
 
         <h1 className="text-2xl font-bold">
-          <Link href="/">My Blog</Link>
+          <Link href="/">My Blog {process.env.NEXT_PUBLIC_BLOG_NAME}</Link>
         </h1>
 
         {/* ✅ Nav Links */}
