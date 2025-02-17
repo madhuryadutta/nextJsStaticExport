@@ -1,9 +1,11 @@
 import { Post } from "@/types";
 import { Metadata } from "next";
 
+
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT ;
 // ✅ Fetch a single post
 async function getPost(id: string): Promise<Post> {
-    const res = await fetch(`https://dummyjson.com/posts/${id}`);
+    const res = await fetch(`${apiUrl}/posts/${id}`);
     if (!res.ok) throw new Error("Failed to fetch post");
     return res.json();
 }
@@ -93,7 +95,7 @@ function RelatedPosts() {
 
 // ✅ Generate Static Paths for Build-Time Export
 export async function generateStaticParams() {
-    const res = await fetch("https://dummyjson.com/posts");
+    const res = await fetch(apiUrl + "/posts");
     if (!res.ok) throw new Error("Failed to fetch posts");
     const data = await res.json();
 
