@@ -40,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     <html lang="en">
       <head>
-        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        <script src="https://unpkg.com/@tailwindcss/browser@4" async/>
       </head>
       <body>
         <div className="min-h-screen bg-gray-100 text-gray-900">
