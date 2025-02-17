@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Post } from "@/types/post";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
 // ✅ Fetch all posts at build time
 async function getPosts(): Promise<Post[]> {
-  const res = await fetch("https://dummyjson.com/posts");
+  const res = await fetch(apiUrl+"/posts");
   const data = await res.json();
   return data.posts;
 }
@@ -13,16 +14,6 @@ export default async function Home() {
   const posts = await getPosts();
 
   return (
-    // <div>
-    //   <h1>Blog Posts</h1>
-    //   <ul>
-    //     {posts.map((post) => (
-    //       <li key={post.id}>
-    //         <Link href={`/content/${post.id}`}>{post.title}</Link>
-    //       </li>
-    //     ))}
-    //   </ul>
-    // </div>
     <div className="max-w-4xl mx-auto py-10">
       {/* ✅ Page Title */}
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">Blog Posts</h1>

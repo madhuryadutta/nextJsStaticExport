@@ -32,7 +32,8 @@
 //     </html>
 //   );
 // }
-import Link from 'next/link'
+import Link from 'next/link';
+import "./globals.css";
 
 
 
@@ -41,7 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     <html lang="en">
       <head>
-        <script src="https://unpkg.com/@tailwindcss/browser@4" async />
+        {/* <script src="https://unpkg.com/@tailwindcss/browser@4" async /> */}
       </head>
       <body>
         <div className="min-h-screen bg-gray-100 text-gray-900">
@@ -69,7 +70,7 @@ function Navbar() {
         {/* ✅ Brand */}
 
         <h1 className="text-2xl font-bold">
-          <Link href="/">My Blog</Link>
+          <Link href="/"> {process.env.NEXT_PUBLIC_BLOG_NAME}</Link>
         </h1>
 
         {/* ✅ Nav Links */}
