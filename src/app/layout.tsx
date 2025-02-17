@@ -1,6 +1,5 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -33,15 +32,12 @@
 //   );
 // }
 import Link from 'next/link'
-
-
-
+import "./globals.css";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
 
     <html lang="en">
       <head>
-        <script src="https://unpkg.com/@tailwindcss/browser@4" async />
       </head>
       <body>
         <div className="min-h-screen bg-gray-100 text-gray-900">
