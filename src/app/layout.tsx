@@ -32,6 +32,7 @@
 //     </html>
 //   );
 // }
+import Link from 'next/link'
 
 
 
@@ -40,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     <html lang="en">
       <head>
-        <script src="https://unpkg.com/@tailwindcss/browser@4" async/>
+        <script src="https://unpkg.com/@tailwindcss/browser@4" async />
       </head>
       <body>
         <div className="min-h-screen bg-gray-100 text-gray-900">
@@ -68,7 +69,7 @@ function Navbar() {
         {/* ✅ Brand */}
 
         <h1 className="text-2xl font-bold">
-          <a href="/">My Blog</a>
+          <Link href="/">My Blog</Link>
         </h1>
 
         {/* ✅ Nav Links */}
