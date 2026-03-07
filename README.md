@@ -1,3 +1,16 @@
+## 📦 Repository Archived
+
+> ⚠️ **Status: Archived / Learning Project**
+
+This project was created as part of my **learning journey** while exploring a new **framework / language / feature**.
+
+The learning phase is now **complete**, and I am now focusing on **real-world projects and production work**.
+
+This repository will remain available for **reference and learning purposes** (and memories 😄).
+
+⚡ **Note:** No further updates or maintenance will be made to this repository.
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
